@@ -1,0 +1,12 @@
+D:\Complementos\Validador\bin\Debug\Validador.exe
+D:\Complementos\Validador\bin\Debug\Validador.pdb
+D:\Complementos\Validador\bin\Debug\Validador.xml
+D:\Complementos\Validador\bin\Debug\VolumenSerial.dll
+D:\Complementos\Validador\bin\Debug\VolumenSerial.pdb
+D:\Complementos\Validador\obj\Debug\ResolveAssemblyReference.cache
+D:\Complementos\Validador\obj\Debug\Validador.frmValidador.resources
+D:\Complementos\Validador\obj\Debug\Validador.Resources.resources
+D:\Complementos\Validador\obj\Debug\Validador.vbproj.GenerateResource.Cache
+D:\Complementos\Validador\obj\Debug\Validador.exe
+D:\Complementos\Validador\obj\Debug\Validador.xml
+D:\Complementos\Validador\obj\Debug\Validador.pdb

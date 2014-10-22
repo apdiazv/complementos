@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolumenSerial", "VolumenSerial\VolumenSerial.csproj", "{5F87893B-4691-418E-82DD-79869A192023}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CAddin", "CAddin\CAddin.vbproj", "{5513FE07-C8C7-4115-B837-5BFAD15C1015}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61E398A8-A67B-4C1D-9485-F839ACE695C7} = {61E398A8-A67B-4C1D-9485-F839ACE695C7}
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CAddinSetup", "CAddinSetup\CAddinSetup.vdproj", "{36D3CB66-301F-47FB-8D0B-612B5F81CB3C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Validador", "Validador\Validador.vbproj", "{97F5F667-E86F-4B99-B5F7-1715AA82BC38}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CFunciones", "Funciones\CFunciones.vbproj", "{61E398A8-A67B-4C1D-9485-F839ACE695C7}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ComplementosSetup", "ComplementosSetup\ComplementosSetup.vdproj", "{C3305D43-9A4B-4D26-9728-B743A519111E}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 7
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CAddin\\CAddin.vbproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = CAddin\\
+		SccProjectUniqueName2 = CAddinSetup\\CAddinSetup.vdproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = CAddinSetup\\
+		SccProjectUniqueName3 = Funciones\\CFunciones.vbproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = Funciones\\
+		SccProjectUniqueName4 = Validador\\Validador.vbproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = Validador\\
+		SccProjectUniqueName5 = VolumenSerial\\VolumenSerial.csproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = VolumenSerial\\
+		SccProjectUniqueName6 = ComplementosSetup\\ComplementosSetup.vdproj
+		SccLocalPath6 = .
+		SccProjectFilePathRelativizedFromConnection6 = ComplementosSetup\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F87893B-4691-418E-82DD-79869A192023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F87893B-4691-418E-82DD-79869A192023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F87893B-4691-418E-82DD-79869A192023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F87893B-4691-418E-82DD-79869A192023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5513FE07-C8C7-4115-B837-5BFAD15C1015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5513FE07-C8C7-4115-B837-5BFAD15C1015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5513FE07-C8C7-4115-B837-5BFAD15C1015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D3CB66-301F-47FB-8D0B-612B5F81CB3C}.Debug|Any CPU.ActiveCfg = Debug
+		{36D3CB66-301F-47FB-8D0B-612B5F81CB3C}.Release|Any CPU.ActiveCfg = Release
+		{36D3CB66-301F-47FB-8D0B-612B5F81CB3C}.Release|Any CPU.Build.0 = Release
+		{97F5F667-E86F-4B99-B5F7-1715AA82BC38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F5F667-E86F-4B99-B5F7-1715AA82BC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F5F667-E86F-4B99-B5F7-1715AA82BC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61E398A8-A67B-4C1D-9485-F839ACE695C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61E398A8-A67B-4C1D-9485-F839ACE695C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61E398A8-A67B-4C1D-9485-F839ACE695C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61E398A8-A67B-4C1D-9485-F839ACE695C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3305D43-9A4B-4D26-9728-B743A519111E}.Debug|Any CPU.ActiveCfg = Debug
+		{C3305D43-9A4B-4D26-9728-B743A519111E}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

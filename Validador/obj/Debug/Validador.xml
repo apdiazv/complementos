@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Validador
+</name>
+</assembly>
+<members>
+<member name="M:Validador.frmValidador.GenerarClave(System.String)">
+	<summary>
+ Genera una clave del tipo xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx a partir de un string.
+ </summary>
+	<param name="sClave">Clave a Encriptar</param>
+	<returns>String del tipo xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx en hexadecimal</returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>
