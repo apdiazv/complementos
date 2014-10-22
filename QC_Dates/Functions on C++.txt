@@ -1,0 +1,750 @@
+Functions on C++
+Todas las funciones que retornan un int como fecha de Excel pueden ser duplicadas de tal forma que en C++ se trabaje con un tipo "Date" pre definido.
+#Region "AUX"
+double // Devuelve interes devengado entre dos fecha para tasa y nocional dados (utiliza 'YearFraction')
+interest(int startDate // Fecha inicio
+		 , int endDate // Fecha fin
+		 , double rate // Tasa
+		 , std::string typeOfRate // Tipo capitalizacion y convencion conteo de dias (Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Comp 30/360) (por defecto comp)
+		 , double notional // Nocional
+		 )
+
+int // Devuele 1 si n = m, si no 0
+indicador(int n, // n
+		, int m // m
+		)
+		
+int // Convierte un string en entero
+valad(std::string x // string
+		)
+int // Sin descripcion
+ten ( std::string Tn // Tenor
+	)
+	
+int // Dada una fecha y tenor, entrega fecha del tenor local, es decir, finalizando el dia 9 del mes correspondiente(utiliza 'AddMonths' y 'Ten')
+localTenor(int startDate // Fecha inicio
+		 , std::string Tn // Tenor
+		 )
+
+int// Ajusta al habil siguiente (si fecha ingresada es habil entonces devuelve tal fecha)
+bussDay(int  a // Fecha
+		)
+
+int // Quita n dias habiles a una fecha dada. La opcion 0 quita un dia habil si fecha ingresada es inhabil
+lag(int  a // Fecha
+	, int nStep // Numero de dias habiles
+	)
+
+int // Agrega n dias habiles a una fecha dada. La opcion 0 agrega un dia habil si fecha ingresada es inhabil.
+shift(int  a // Fecha
+	, int nStep // Numero de dias habiles
+		)
+		
+int // Ajusta a habil siguiente. Si se cambia mes entonces ajusta al habil anterior. (si la fecha ingresada es habil entonces devuelve tal fecha)
+modBussDay(int a // Fecha
+		)
+
+int //Si la fecha ingresada no es habil, la ajusta a habil anterior
+prev2(int  a // Fecha
+		)
+		
+//Esta funcion ya esta definida en C++
+int // Calcula el maximo entre 'a'y 'b'
+max(int a // numero 1
+	, int b // numero 2
+	)
+
+//Esta funcion ya esta definida en C++
+int // Calcula el minimo entre 'a'y 'b'
+min(int a // numero 1
+	, int b // numero 2
+	)
+
+double // Calcula tiempo en dias entre dos fechas utilizando base especificada
+countDays(int t1 // Fecha inicio
+		, int t2 // Fecha fin
+		, std:: string basis // base: Act/365, act/360 o 30/360. Notar que act/365=act/360 ya que cuenta en dias (por defecto act/365=act/360)
+		)
+
+double // Calcula tiempo en años entre dos fechas utilizando base especificada
+yearFraction(int t1 // Fecha inicio
+		, int t2 // Fecha fin
+		, std:: string basis // base: Act/365, act/360 o 30/360. Notar que act/365=act/360 ya que cuenta en dias (por defecto act/365=act/360)
+		)
+
+int // Agrega o quita meses a una fecha dada
+addMonths(int dat // Fecha inicial
+		, int mon // Numero de meses a agregar o quitar
+		)
+
+int // Agrega o quita meses a una fecha dada. Fecha final es dia 9 del mes
+addMonthsC(int dat // Fecha inicial
+		, int mon // Numero de meses a agregar o quitar
+		)
+
+int // Calcula tiempo en años entre dos fechas utilizando base act/act
+yearFractionActualActual(int inicial // Fecha inicio
+						, int final // Fecha fin
+						, std:: string basis // base: Act/365, act/360 o 30/360. Notar que act/365=act/360 ya que cuenta en dias (por defecto act/365=act/360)
+						)
+
+double // Si parte decimal de n es menor que 0.25 devuelve n, si es mayor o igual a 0.25 y menor que 0.75 devuelve (n+0.5) y si es mayor que 0.75 devuelve (n+1) 
+redondeoParcial(double n // numero
+				)
+
+matriz // Genera calendario de pata variable de un Swap
+calendarAmortize(int startDate // Fecha inicio
+				, int endDate // Fecha fin
+				, int periodicity // Periodicidad
+				, double accAdjustment // Ajuste fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil)
+				, double pmtAdjustment // Ajuste fechas de pago (respecto a fechas fin de periodo): 0, habil siguiente (solo si la fecha no es habil) 1, habil siguiente; 2, habil subsiguiente
+				, int typeStubPeriod // 0 corto inicio, 1 corto final, 2 largo inicio, 3 largo final
+				, int typeAmortization // 0 bullet, 1 constante, 2 frances, else bullet
+				, double amortizeRate // Tasa para frances
+				, std::string typeAmortizeRate // Tipo tasa frances (no implementada siempre comp 30/360)
+				)
+
+matriz // Genera calendario de pata variable de un Swap
+calendar(int startDate // Fecha inicio
+		, int endDate // Fecha fin
+		, int periodicity // Periodicidad
+		, double accAdjustment // Ajuste fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil)
+		, double pmtAdjustment // Ajuste fechas de pago (respecto a fechas fin de periodo): 0, habil siguiente (solo si la fecha no es habil) 1, habil siguiente; 2, habil subsiguiente
+		, int typeStubPeriod // 0 corto inicio, 1 corto final, 2 largo inicio, 3 largo final
+		)
+		
+matriz // Genera calendario de pata variable de un Swap
+floatCalendarAmortize(int startDate // Fecha inicio
+				, int endDate // Fecha fin
+				, int periodicity // Periodicidad
+				, int accAdjustment // Ajuste fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil)
+				, int pmtAdjustment // Ajuste fechas de pago (respecto a fechas fin de periodo): 0, habil siguiente (solo si la fecha no es habil) 1, habil siguiente; 2, habil subsiguiente
+				, int typeStubPeriod // Periodo corto: 0, al final; 1, al principio
+				, int fixingLag // Rezago de fijacion (respecto a fecha inicio): 0, habil anterior (solo si la fecha no es habil) 1, un dia habil; 2, dos dias habiles
+				, int fixingRatio // Periocidad fijacion: n, se fija cada n periodos
+				, int fixingStubPeriod // Periodo fijacion unica: 0, al final; 1, al principio
+				, int typeAmortization // 1 bullet, 2 constante, 3 frances, else bullet
+				, double amortizeRate // Tasa para frances
+				, std::string typeAmortizeRate // Tipo tasa frances (no implementada siempre comp 30/360)
+				)
+
+matriz // Genera calendario de pata variable de un Swap
+floatCalendar(int startDate // Fecha inicio
+			, int endDate // Fecha fin
+			, int periodicity // Periodicidad
+			, int accAdjustment // Ajuste fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil)
+			, int pmtAdjustment // Ajuste fechas de pago (respecto a fechas fin de periodo): 0, habil siguiente (solo si la fecha no es habil) 1, habil siguiente; 2, habil subsiguiente
+			, int typeStubPeriod // Periodo corto: 0, al final; 1, al principio
+			, int fixingLag // Rezago de fijacion (respecto a fecha inicio): 0, habil anterior (solo si la fecha no es habil) 1, un dia habil; 2, dos dias habiles
+			, int fixingRatio // Periocidad fijacion: n, se fija cada n periodos
+			, int fixingStubPeriod // Periodo fijacion unica: 0, al final; 1, al principio
+			)
+			
+std:: string //
+forwardCurveFromCurrency( std::string ccy // moneda
+						)
+
+			
+
+#End Region
+
+#Region "Curve"
+
+double // Calcula tasa dado un factor de descuento. (utiliza la funcion 'YearFraction')
+getRateFromDf(int startDate // Fecha inicio
+			, int endDate // Fecha fin 
+			, double df // factor de descuento
+			, std::string typeOfRate// Lin Act/365, Comp act/360 ...0
+			)
+
+double // Calcula tasa lineal dado un factor de descuento. (utiliza la funcion 'YearFraction')
+getRateFromDiscountFactor(int FechaIni // Fecha inicio
+						, int FechaFin // Fecha fin
+						, double df // Factor de descuento
+						, std::string forma // Act/365, act/360 o 30/360
+						)
+
+double // Sin descripcion
+getRateFromCurve(double days //
+               , vector<double> tenors //
+			   , vector<double> rates // 
+			   , double model // Model As Object??
+               , double parameters //
+               , int basis = 365 //
+               , int compound= 2 //
+				)
+
+
+double //Calcula el factor descuento asociado a un plazo y una curva (interpola linealmente en tasa)
+getDiscountFactorFromCurve(double days // Tiempo en dias al que se quiere obtener el factor de descuento
+						, vector<double> tenors // Tenors de la curva
+                        , vector<double> rates //  Tasas correpondientes a cada tenor
+                        , int basis // 360, 365
+                        , int compound // Lineal:1, Compuesta:2, Compuesta continua:3 (valor defecto 2)
+						)
+						
+double //Calcula el df fwd entre dos plazos (interpola linealmente en tasa)
+getDfFwdFromCurve( double days1//Dias iniciales
+				, double days2//Dias finales
+                , vector<double> tenors // Tenors de la curva
+                , vector<double> rates //  Tasas correpondientes a cada tenor
+                , int basis // 360, 365
+                , int compound // Lineal:1, Compuesta:2, Compuesta continua:3 (valor defecto 2)
+				)
+				
+// Ya implementada en xva
+double // Interpola lineal en tasa
+linInterpol(vector<double> plazos // Plazos
+          , vector<double> rates //  Tasas correspondiente a cada plazo definido anteriormente
+		  , double plazo // Plazo al que se interpolara la tasa
+		)
+
+double // Interpola exponencial en factor de descuento
+expInterpol(vector<double> plazos // Plazos
+          , vector<double> factores //  Factores de descuento a cada plazo definido anteriormente
+		  , double plazo // Plazo al que se interpolara el factor de descuento
+		)	
+#End Region
+
+#Region "Svensson"
+
+double // Calcula factor descuento en funcion del tiempo y los parametros de N-S-S
+discountFactorFromSvensson(double t // Tiempo al cual se calcula factor descuento
+						, vector<double> parameters// Los parametros son; beta0, beta1, beta2, t1 y t2
+						)
+
+double // Calcula tasa cero asociada al factor descuento N-S-S dada una base y composicion
+rateFromSvensson( double days // Tiempo al cual se calcula factor descuento
+				, vector<double> parameters// Los parametros son; beta0, beta1, beta2, t1 y t2
+                , int basis // 360, 365
+                , int compound // Lineal:1, Compuesta:2, Compuesta continua:3 (valor defecto 2)
+				)
+#End Region
+
+#Region "Swaps"
+
+double // Calcula valor presente de flujos de caja puestos en distintas fechas (utiliza funcion GetDiscoundFactorFroma Curve)
+pvCashFlowsFromCurve( vector<double> tenorsCashFlows // Fechas de flujos cajas
+					, vector<double> cashFlows // flujos de cajas
+					, vector<double> tenors // tenors de curva de descuento
+                    , vector<double> rates // tasas a los correspondientes tenors
+					, int basis // Base de tasa de referencia (360, 365)
+					, int compound // Lineal:1, Compuesta:2, Compuesta continua:3 (valor defecto 2)
+					)
+
+double // Calcula el interes de un cupon pata camara proyectando la parte no fijada
+couponCamara(int valueDate // Fecha de valoracion
+		   , int startDate // Fecha inicio cupon
+		   , int endDate // Fecha fin de cupon
+		   , double fixing  // Fijacion hasta value date
+		   , double spread  // Spread aditivo
+		   , std::string typeCoupon // Tipo cupon
+		   , double notional  // Nocional 
+		   , vector<double> tenors // Plazos de la curva
+		   , vector<double> rates // Tasas de la curva
+		   , double basis // Base de las tasas
+		   , double compound // Tipo de composicion 1:lineal 2:compuesto
+		   )
+		   
+double // Calcula el interes de un cupon pata flotante proyectando si no ha fijado
+couponFloat(int valueDate // Fecha de valoracion
+		   , int startDate // Fecha inicio cupon
+		   , int endDate // Fecha fin de cupon
+		   , std::string floatIndexTenor // Tenor indice flotante
+		   , int fixingLag // Lag de fijacion del indice flotante
+		   , int floatIndexShift // Shift de partida del indice flotante
+           , double fixing // Fijacion
+           , double spread // Spread aditivo
+           , std::string typeCoupon // Tipo cupon
+           , double notional // Nocional
+		   , vector<double> tenors // Plazos de la curva
+           , vector<double> rates // Tasas de la curva
+           , double basis // Base de las tasas
+           , double compound // Tipo de composicion 1:lineal 2:compuesto
+           )
+
+double //Calcula el valor presente de una pata fija amortizable
+pvFixedAmortSwapLegFromCurve(int valueDate // Fecha val
+							, int startDate // Fecha ini
+							, int endDate // Fecha fin  
+							, int periodicity // Periocidad  
+							, int accAdjustment // Ajuste de fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil)  
+							, int pmtAdjustment // Ajuste de fechas de pago (respecto a fechas fin de periodo): 0, habil siguiente (solo si la fecha no es habil) 1, habil siguiente; 2, habil subsiguiente
+					        , int typeStubPeriod // Periodo corto: 0, al final; 1, al principio
+							, int typeAmortization // 1:bullet, 2:constante, 3:frances, else:bullet
+							, double amortizeRate // Tasa para frances Com 30/360
+							, std::string typeAmortizeRate // No implementado
+							, double rate // Tasa fija del Swap
+							, std::string typeOfRate// Tipo de capitalizacion y convencion conteo de dias (Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Com 30/360) (por defecto asume comp)
+							, double notional // Nocional
+							, vector<double> tenors // Tenors de la curva
+							, vector<double> rates  // Tasas correpondientes a cada tenor
+							, double basis // 360, 365
+							, int compound // Lineal:1, Compuesta:2, Compuesta continua:3
+							, int exchange // Al ingresar un valor se asume pago de intereses + capital en ultimo periodo.De lo contrario, solo pago de interes
+                            )
+		   
+double // Calcula el valor presente de una pata fija amortizable customizada
+pvFixedCustomAmortSwapLegFromCurve(int valueDate // Fecha val
+                                , int startDate // Fecha ini
+                                , int endDate // Fecha fin
+								, int periodicity// Periocidad
+								, int accAdjustment // Ajuste de fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil)
+                                , int pmtAdjustment // Ajuste de fechas de pago (respecto a fechas fin de periodo): 0, habil siguiente (solo si la fecha no es habil) 1, habil siguiente; 2, habil subsiguiente
+                                , int typeStubPeriod // Periodo corto: 0, al final; 1, al principio
+								, matriz currentNotionalAndAmort // Matriz de % de amort y noc vigente
+								, double rate // Tasa fija del Swap
+                                , int typeOfRate // Tipo de capitalizacion y convencion conteo de dias (Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Com 30/360) (por defecto asume comp)
+                                , double notional // Nocional
+                                , vector<double> tenors //Tenors de la curva
+                                , vector<double> rates // Tasas correpondientes a cada tenor
+                                , int basis //360, 365
+                                , int compound // Lineal:1, Compuesta:2, Compuesta continua:3
+                                , int exchange // Al ingresar un valor se asume pago de intereses + capital en ultimo periodo.De lo contrario, solo pago de interes
+                                )
+								
+double // Calcula valor presente de pata fija de un swap (utiliza la funcion 'calendar', 'interest' y 'GetDiscoundFactorFromCurve')
+pvFixedSwapLegFromCurve(int valueDate //Fecha val
+					  , int startDate //Fecha ini
+					  , int endDate // Fecba fin
+					  , int periodicity //Periocidad              
+					  , int adjustment  //Ajuste de fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil)                                        
+					  , int pmtAdjustment //Ajuste de fechas de pago (respecto a fechas fin de periodo): 0, habil siguiente (solo si la fecha no es habil) 1, habil siguiente; 2, habil subsiguiente                                        
+					  , int typeStubPeriod //Periodo corto: 0, al final; 1, al principio                                      
+					  , double rate As Double //Tasa fija del Swap                                        
+					  , istd::string typeOfRate //Tipo de capitalizacion y convencion conteo de dias (Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Com 30/360) (por defecto asume comp)
+                      , double notional //Nocional              
+					  , vector<double> tenors //Tenors de la curva              
+					  , vector<double> rates //Tasas correpondientes a cada tenor               
+					  , int basis //360, 365          
+					  , int compound // Lineal:1, Compuesta:2, Compuesta continua:3            
+					  , int exchange //Al ingresar un valor se asume pago de intereses + capital en ultimo periodo.De lo contrario, solo pago de interes
+					  )
+
+double //Esta funcion calcula los intereses de pata fija de un swap, a partir del periodo al que pertenece valueDate
+accruedInterestFixedSwapLeg(int valueDate // Fecha val
+                          , int startDate // Fecha ini
+						  , int endDate // Fecha fin
+						  , int periodicity// Periocidad
+						  , int accAdjustment // Ajuste de fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil)
+						  , int pmtAdjustment // Ajuste de fechas de pago (respecto a fechas fin de periodo): 0, habil siguiente (solo si la fecha no es habil) 1, habil siguiente; 2, habil subsiguiente
+						  , int typeStubPeriod // Periodo corto: 0, al final; 1, al principio
+						  , double rate // Tasa fija del Swap
+						  , int typeOfRate // Tipo de capitalizacion y convencion conteo de dias (Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Com 30/360) (por defecto asume comp)
+						  , double notional // Nocional
+						  )
+						  
+						  
+double // Calcula el valor presente de la pata variable de un swap (utiliza la funcion 'floatCalendar', 'interest' y 'GetDiscoundFactorFromCurve')
+pvFloatAmortSwapLegFromCurve(int valueDate // Fecha val	
+                           , int startDate // Fecha ini
+                           , int endDate // Fecha fin
+                           , int periodicity // Periocidad
+                           , int accAdjustment // Adj, ver funcion floatCalendar
+                           , int pmtAdjustment // PerAdj, Ver funcion floatCalendar
+                           , int typeStubPeriod // typeStubPer, Periodo corto: 0=al final; 1=al principio     
+                           , int fixingLag // Rezago de fijacion (respecto a fecha inicio): 0, habil anterior (solo si la fecha no es habil) 1=un dia habil; 2=dos dias habiles              
+                           , int fixingRatio // Cada cuantos periodos fija
+                           , int fixingStubPeriod // fixingStubPer, Periodo fijacion unica: 0:al final; 1:al principio
+                           , int typeAmortization // typeAmort, 1:bullet, 2:constante, 3:frances, else:bullet
+                           , double amortizeRate // amortRate, Tasa para frances Com 30/360
+                           , int typeAmortizeRate  // typeAmortRate, No implementado                            
+                           , double lastFixing  // ultima tasa fijada antes de valueDate 
+                           , int spread // Spread
+                           , std::string typeOfSpAndR // Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Com 30/360
+                           , std::string floatIndexTenor // Tenor tasa ref
+                           , int floatIndexShift // Ajuste tasa ref
+                           , double notional // Nocional                            
+                           , vector<double> tenors // Tenors tasa ref                            
+                           , vector<double>  rates // Tasas a los tenors                             
+                           , int basis // Base tasa referencia (360,365)                          
+                           , int compound  // comp
+                           , int cmsFlag // Lineal:1, Compuesta:2, Compuesta continua:3  
+                           , int exchange // Al ingresar un valor se asume pago de intereses + capital en ultimo periodo.De lo contrario, solo pago de interes
+						   )
+double // Calcula el valor presente de la pata variable de un swap (utiliza la funcion 'floatCalendar', 'interest' y 'GetDiscoundFactorFromCurve')_
+pvFloatCustomAmortSwapLegFromCurve(int valueDate // Fecha val	
+								 , int startDate // Fecha ini
+								 , int endDate // Fecha fin
+								 , int periodicity // Periocidad
+								 , int accAdjustment // Adj, ver funcion floatCalendar
+								 , int pmtAdjustment // PerAdj, Ver funcion floatCalendar
+								 , int typeStubPeriod // typeStubPer, Periodo corto: 0=al final; 1=al principio     
+								 , int fixingLag // Rezago de fijacion (respecto a fecha inicio): 0, habil anterior (solo si la fecha no es habil) 1=un dia habil; 2=dos dias habiles              
+								 , int fixingRatio // Cada cuantos periodos fija
+								 , int fixingStubPeriod // fixingStubPer, Periodo fijacion unica: 0:al final; 1:al principio
+								 , matriz currentNotionalAndAmort // Matriz de % de amort y noc vigente
+								 , double lastFixing  // ultima tasa fijada antes de valueDate 
+								 , int spread // Spread
+								 , std::string typeOfSpAndR // Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Com 30/360
+								 , std::string floatIndexTenor // Tenor tasa ref
+								 , int floatIndexShift // Ajuste tasa ref                           
+								 , double notional // Nocional                            
+								 , vector<double> tenors // Tenors tasa ref                            
+								 , vector<double>  rates // Tasas a los tenors                             
+								 , int basis // Base tasa referencia (360,365)                          
+								 , int compound  // comp
+								 , int cmsFlag // Lineal:1, Compuesta:2, Compuesta continua:3  
+								 , int exchange // Al ingresar un valor se asume pago de intereses + capital en ultimo periodo.De lo contrario, solo pago de interes
+								 )
+
+double // Calcula el valor presente de la pata variable de un swap (utiliza la funcion 'floatCalendar', 'interest' y 'GetDiscoundFactorFromCurve')
+pvFloatSwapLegFromCurve(int valueDate // Fecha val
+					  , int startDate  // Fecha ini
+					  , int endDate // Fecha fin 
+					  , int periodicity // Periocidad
+					  , int adjustment // ver funcion floatCalendar
+					  , int pmtAdjustment  // Ver funcion floatCalendar
+					  , int typeStubPeriod // Periodo corto: 0=al final; 1=al principio  
+					  , int fixingLag  // Rezago de fijacion (respecto a fecha inicio): 0, habil anterior (solo si la fecha no es habil) 1=un dia habil; 2=dos dias habiles
+					  , int fixingRatio // Periocidad de fijacion: n, se fija cada n periodos 
+					  , int fixingStubPeriod // Periodo fijacion unica: 0:al final; 1:al principio  
+					  , double lastFixing // ultima tasa fijada antes de valueDate
+					  , double spread // Spread
+					  , std:: string typeOfSpreadAndRate // Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Com 30/360
+					  , std::string floatIndexTenor // Tenor tasa ref
+					  , int floatIndexShift// Ajuste tasa ref_  
+					  , double notional // Nocional                            
+					  , vector<double> tenors // Tenors tasa ref                            
+					  , vector<double>  rates // Tasas a los tenors                             
+					  , int basis // Base tasa referencia (360,365)                          
+					  , int compound  // comp
+					  , int cmsFlag // Lineal:1, Compuesta:2, Compuesta continua:3  
+					  , int exchange // Al ingresar un valor se asume pago de intereses + capital en ultimo periodo.De lo contrario, solo pago de interes
+					  )
+					  
+double // Entrega tasa USD onshore en funcion de tasa en CLP, spot y puntos forwards
+cldRateFromFwdPoints(int days // Tiempo en dias al que se calcula la tasa 
+				   , double spot // Spot USD/CLP
+				   , double points // puntos forwdars
+				   , vector<double> tenors // tenors curva en CLP
+				   , vector<double> rates // tasas a los correspondientes tenors
+				   , int basis // Base tasa en CLP (360, 365) 
+				   , int compound // Lineal:1, Compuesta:2, Compuesta continua:3 (por defecto 2) 
+				   , int linOrComp // Forma capitilacion tasa calculada 
+				   , double basisReturn // Base tasa calculada
+				   )
+				   
+				   
+double // Calcula valor presente de pata variable de un cross que proyecta con curva y descuenta con otra (utiliza 'Calendar', 'interest' y 'GetDiscoundFactorFromCurve')
+pvFloatAmortCrossLegFromCurve(int valueDate // Fecha de valoracion
+							, int startDate // Fecha inicio 
+							, int endDate // Fecha fin 
+							, int periodicity // Periocidad 
+							, int accAdjustment // Ajuste de fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil) 
+							, int pmtAdjustment // Ajuste de fechas de pago 
+							, int typeStubPeriod // Periodo corto: 0, al final; 1, al principio 
+							, int fixingLag // Lag del indice flotante 
+							, int fixingRatio // Cada cuantos periodos se fija 
+							, int fixingStubPeriod // Periodo corto de fixing 
+							, int typeAmortization // 1:bullet, 2:constante, 3:frances, else:bullet
+							, double amortizeRate // Tasa frances Com 30/360 
+							, std::string typeAmortizeRate // No implementado 
+							, double lastFixing // ultima tasa fijada
+							, double spread// spread
+							, std::string typeOfSpAndR// Tipo capitalizacion y convencion conteo de dias (Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Comp 30/360) (por defecto comp) 
+							,  std::string floatIndexTenor // Tenor indice flotante
+							, int floatIndexShift // Start Lag indice flotante
+							, double notional // Nocional                            
+							, vector<double> tenors // Tenors tasa ref                            
+							, vector<double>  rates // Tasas a los tenors                             
+							, int basis // Base tasa referencia (360,365)                          
+							, int compound  // comp
+							, int cmsFlag // cmsFlag=1 es camara promedio, si no es swap normal
+							, int exchange // Al ingresar un valor se asume pago de intereses + capital en ultimo periodo.De lo contrario, solo pago de interes
+							, vector<double> tenors1 // Tenors tasa ref                            
+							, vector<double>  rates1 // Tasas a los tenors
+							, int basis1 // Base tasa referencia (360,365)                          
+							, int compound1  // comp
+							)
+							
+double // Calcula valor presente de pata variable de un cross que proyecta con curva y descuenta con otra (utiliza 'Calendar', 'interest' y 'GetDiscoundFactorFromCurve')
+pvFloatCustomAmortCrossLegFromCurve(int valueDate // Fecha val	
+								 , int startDate // Fecha ini
+								 , int endDate // Fecha fin
+								 , int periodicity // Periocidad
+								 , int accAdjustment // Adj, ver funcion floatCalendar
+								 , int pmtAdjustment // PerAdj, Ver funcion floatCalendar
+								 , int typeStubPeriod // typeStubPer, Periodo corto: 0=al final; 1=al principio     
+								 , int fixingLag // Rezago de fijacion (respecto a fecha inicio): 0, habil anterior (solo si la fecha no es habil) 1=un dia habil; 2=dos dias habiles              
+								 , int fixingRatio // Cada cuantos periodos fija
+								 , int fixingStubPeriod // fixingStubPer, Periodo fijacion unica: 0:al final; 1:al principio
+								 , matriz currentNotionalAndAmort // Matriz de % de amort y noc vigente
+								 , double lastFixing  // ultima tasa fijada antes de valueDate 
+								 , int spread // Spread
+								 , std::string typeOfSpAndR // Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Com 30/360
+								 , std::string floatIndexTenor // Tenor tasa ref
+								 , int floatIndexShift // Ajuste tasa ref                           
+								 , double notional // Nocional                            
+								 , vector<double> tenors // Tenors tasa ref                            
+								 , vector<double>  rates // Tasas a los tenors                             
+								 , int basis // Base tasa referencia (360,365)                          
+								 , int compound  // comp
+								 , int cmsFlag // Lineal:1, Compuesta:2, Compuesta continua:3  
+								 , int exchange // Al ingresar un valor se asume pago de intereses + capital en ultimo periodo.De lo contrario, solo pago de interes
+								 , vector<double> tenors1 // Tenors tasa ref                            
+								 , vector<double>  rates1 // Tasas a los tenors
+								 , int basis1 // Base tasa referencia (360,365)                          
+								 , int compound1  // comp
+								 )
+
+double // Calcula valor presente de pata variable de un cross que proyecta con curva y descuenta con otra (utiliza 'Calendar', 'interest' y 'GetDiscoundFactorFromCurve')
+pvFloatCrossLegFromCurve(int valueDate // Fecha vala
+						,int startDate // Fecha ini
+						, int endDate // Fecha fin
+						, int periodicity // Periocidad
+						, int accAdjustment // Adj, ver funcion floatCalendar
+						, int pmtAdjustment // PerAdj, Ver funcion floatCalendar
+						, int typeStubPeriod // typeStubPer, Periodo corto: 0=al final; 1=al principio     
+						, int fixingLag // Rezago de fijacion (respecto a fecha inicio): 0, habil anterior (solo si la fecha no es habil) 1=un dia habil; 2=dos dias habiles              
+						, int fixingRatio // Cada cuantos periodos fija
+						, int fixingStubPeriod // fixingStubPer, Periodo fijacion unica: 0:al final; 1:al principio
+						, double lastFixing  // ultima tasa fijada antes de valueDate 
+						, int spread // Spread
+						, std::string typeOfSpAndR // Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Com 30/360
+						, std::string floatIndexTenor // Tenor tasa ref
+						, int floatIndexShift // Ajuste tasa ref                           
+						, double notional // Nocional                            
+						, vector<double> tenors // Tenors tasa ref                            
+						, vector<double>  rates // Tasas a los tenors                             
+						, int basis // Base tasa referencia (360,365)                          
+						, int compound  // Lineal:1, Compuesta:2, Compuesta continua:3 (por defecto 2)
+						, int cmsFlag // Lineal:1, Compuesta:2, Compuesta continua:3  
+						, int exchange // Al ingresar un valor se asume pago de intereses + capital en ultimo periodo.De lo contrario, solo pago de interes
+						, vector<double> tenors1 // Tenors tasa ref                            
+						, vector<double>  rates1 // Tasas a los tenors
+						, int basis1 // Base tasa referencia (360,365)                          
+						, int compound1  // comp
+						)
+						
+#End Region	
+					
+#Region "BootStrapping"
+vector<double> // 
+ITB(int FechaVal
+ , std::string Dtenors
+ , vector<double> Drates
+ , double Dbasis
+ , int DComp
+ , vector<std::string> Stenors
+ , vector<double> Srates
+ , std::string Sdaycount
+ , double Sfreq
+ )
+
+vector<double> // Realiza Bootstrapping imponiendo la condicion: VP pata fija=Par
+ITB2(int valueDate // Trade date
+	, int startLag // Rezago inicio
+	, int DepoType // Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Comp 30/360 
+	, vector<double> DepoTenors // Tenores a los que se observan las tasas cero
+	, vector<double> DepoRates // Tasas a correspondientes tenors , int 
+	, int periodicity // Periocidad pata fija 
+	, int accrualAdjustment // Ajuste fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil) 
+	, int paymentAdjustment// Ajuste fechas pago (respecto fechas fin de periodo): 0, habil siguiente (solo si la fecha no es habil) 1, habil siguiente; 2, habil subsiguiente 
+	, int stubPeriod // Periodo corto: 0, al final; 1, al principio 
+	, std::string swapType // Tipo capitalizacion y convencion conteo de dias de swaps(Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Comp 30/360) (por defecto comp) 
+	, vector<double> swapTenors // Tenores a los que se observan swaps 
+	, vector<double> swapRates // Tasas a los correspondientes tenors
+	)
+
+vector<double> // Realiza bootstrapping patas flotantes con spread. Asume conocida curva proyeccion, que patas estan a la par y determina curva descuento
+ITBCross(int valueDate // Trade date 
+       , int startLag // Rezago de inicio 
+       , std::string depoType // Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Comp 30/360 
+       , vector<double> depoTenors // Tenores tasas cero 
+       , vector<double> depoRates // Tasas a los tenors
+       , int periodicity // Periocidad pata fija
+       , int accrualAdjustment // Ver floatCalendar
+       , int paymentAdjustment // Ver floatCalendar
+       , int stubPeriod // Ver floatCalendar
+       , int fixingLag // Ver floatCalendar
+       , int fixingRatio // Ver floatCalendar
+       , int fixingStubPeriod // Ver floatCalendar
+       , double lastFixing  // ultima tasa fijada 
+       , std::string floatIndexTenor  // Tenor tasa ref 
+       , int floatIndexShift  // Ajuste tasa ref 
+       , std::string swapType  // Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Comp 30/360 
+	   , vector<double> swapTenors // Tenores a las tasas swaps
+       , vector<double> swapRates // Tasas a los tenors
+       , vector<double> tenors  // Tenors tasa ref 
+       , vector<double> rates //
+       , int basis //
+       , int compound //
+       , int cmsflag //
+       , int exchange//
+	   )
+
+#End Region	
+
+#Region "Spread TAB"
+
+double // Estima parmetro sigma del modelo CIR
+sigma(vector<double> spread//Serie historica de Spread
+	, int d // Basis
+	)
+
+double // Estima parametros alpha y beta del modelo CIR_
+CIREstimationFuction(vector<double> spread //Serie historica de spreads
+					, double a //alpha
+					, double b// beta
+					, double s // sigma 
+					, double d // basis
+					)
+
+vector<double> // Simula trayectorias del modelo CIR utilizando esquema de Milstein
+milsteinCIR(double SpreadIni // Spread inicial
+          , double a // alpha
+          , double b // beta
+          , double s // sigma
+          , double d // basis
+          , double n // delta
+          , double m// Numero de dias a simular
+          , int p // Numero de periodos 
+		  )
+		  
+#End Region
+#Region "PVB"
+
+double // Calcula valor presente de plain vanilla bond dada una curva (utiliza la funcion 'calendar', 'GetDiscountFactorFromCurve', 'Indicador', 'interest')
+PVB_PresentValueFromCurve1(int valueDate // Fecha de valoracizacion 
+						 , int startDate // Fecha inicio 
+						 , int endDate // Fecha fin 
+						 , int periodicity // Periodicidad 
+						 , int adjustment // Ajuste fechas fin de periodo: 0, no ajusta; 1, habil siguiente (solo si la fecha no es habil) 
+						 , int typeStubPeriod // Periodo corto: 0, al final; 1, al principio 
+						 , double rate // Cupon de bono 
+						 , std::string typeOfRate // Tipo capitalizacion y convencion conteo dias (Lin act/365, Lin act/360, Lin 30/360, Comp act/365, Comp act/360, Comp 30/360) (por defecto comp)
+						 , double notional // nocional 
+						 , vector<double> tenors // Tenors en los que se observa tasa refencia 
+						 , vector<double> rates // Tasas a los correspondientes tenors 
+						 , int basis // Base tasa referencia (360, 365) 
+						 , int compound // Lineal:1, Compuesta:2, Compuesta continua:3 (por defecto 2)
+						)
+double // Calcula valor presente de plain vanilla bond dada una curva (utiliza 'GetDiscountFactorFromCurve', 'Indicador', 'YearFraction') 
+PVB_PvFromCurve(int Fecha_Val // Fecha de valoracizacion
+			  , double nocional // Nocional 
+			  , double tasa  // Cupon del bono 
+			  , int fechaIni  // Fecha inicio 
+			  , int fechaMat // Fecha fin 
+			  , std::string forma  // Act/365, act/360 o 30/360 
+			  , int per // periocidad 
+			  , vector<double> tenors // Tenors en los que se observa tasa refencia 
+			  , vector<double> rates // Tasas a los correspondientes tenors 
+			  , int basis // Base tasa referencia (360, 365) 
+			  , int compound // Lineal:1, Compuesta:2, Compuesta continua:3 (por defecto 2)
+			  )
+ 
+double // Calcula valor presente de plain vanilla bond dada una TIR (utiliza 'YearFraction')
+PVB_PvFromTir(int Fecha_Val // Fecha de valoracizacion
+			, double nocional // Nocional 
+			, double tasa  // Cupon del bono 
+			, int fechaIni  // Fecha inicio 
+			, int fechaMat // Fecha fin 
+			, std::string forma  // Act/365, act/360 o 30/360 
+			, int per // periocidad 
+			, double tir // TIR a la que se descuenta bono
+			, std::string formaTir // Act/365, act/360 o 30/360
+			)			  
+
+// Encuentra cupon que hace que bono valga par(utiliza PVB_pvFromCurve)
+PVB_FindCouponFromCurve(int Fecha_Val // Fecha de valoracizacion
+                      , int fechaIni  // Fecha inicio 
+                      , int fechaMat // Fecha fin 
+                      , std::string forma  // Act/365, act/360 o 30/360 
+                      , int per // periocidad 
+                      , vector<double> tenors // Tenors en los que se observa tasa refencia 
+                      , vector<double> rates // Tasas a los correspondientes tenors 
+                      , int basis // Base tasa referencia (360, 365) 
+                      , int compound // Lineal:1, Compuesta:2, Compuesta continua:3 (por defecto 2)
+                      )
+#End Region
+#Region "FRB"
+double //
+FRB_PvFromCurve(int fecha_Val
+              , double nocional
+              , double tasavig
+              , int fechaIni
+              , int fechaMat
+              , double spread
+              , std::string forma
+              , int per
+              , vector<double> tenors1
+              , vector<double> rates1
+              , int basis1
+              , int compound1
+			  , vector<double> tenors2 // Optional
+              , vector<double> rates2 // Optional
+              , int basis2 // Optional
+              , int compound2 // Optional
+			  )
+								 
+double //
+FRB_FindSpreadFromCurveAndBook(int fecha_Val
+							 , double book
+							 , double nocional
+							 , double tasavig
+							 , int fechaIni
+							 , int fechaMat
+							 , std::string forma
+							 , int per
+							 , vector<double> tenors1
+							 , vector<double> rates1
+							 , int basis1
+							 , int compound1
+							 , vector<double> tenors2 // Optional
+							 , vector<double> rates2 // Optional
+							 , int basis2 // Optional
+							 , int compound2 // Optional
+			                 )					 
+
+double //
+amortFRB_PvFromCurve(int fecha_Val
+				   , vector<int> iniDates
+				   , vector<int> endDates
+                   , vector<double> nocionales
+				   , double tasavig
+				   , double spread
+				   , std::string forma
+				   , vector<double> tenors1
+				   , vector<double> rates1
+				   , int basis1
+				   , int compound1
+			       , vector<double> tenors2 // Optional
+				   , vector<double> rates2 // Optional
+				   , int basis2 // Optional
+				   , int compound2 // Optional
+				   )
+
+#End Region
+
+#Region "Funciones Auxiliares"					
+double  //
+xNORMAL(double mu
+		, double s
+		)
+
+// Disponible en la libreria cmath		
+double ln(double x )
+
+Corregir los tipos segun correponda
+double ContraeMatriz(Of t)(CellMatrix _matriz) // ByVal matriz(,) As t As t(,) ??
+double DContrae(CellMatrix _matriz) // ByVal matriz(,) As Date
+double DContrae(CellMatrix _matriz) // ByVal matriz(,) As Double)
+double DContraeObj(CellMatrix _matriz) // ByVal matriz(,) As Object)
+double Range2Array(Of t)(CellMatrix range) // ByVal Range As Object) As t()
+std::string  ver() As String
+std::string right(std::string texto, int largo = 1) // Optional ByVal largo As Integer = 1
+bool isMissing(int o ) // ByVal o As Object
+
+#End Region
+	
+#Region "Validacion Licencia"
+bool validaLicencia()
+std::string generarClave(std::string sClave)
+std::string mostrarInformacionDeDisco()
+std::string leeRegistro()
+void grabaRegistro() // Private Sub 
+void borraRegistro() //
+
+#End Region
+ 
