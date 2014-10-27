@@ -1,0 +1,214 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Funciones
+</name>
+</assembly>
+<members>
+<member name="M:Funciones.Financieras.GetRateFromDiscountFactor(System.DateTime,System.DateTime,System.Double,System.String)">
+	<summary>
+	</summary>
+	<param name="FechaIni"></param>
+	<param name="FechaFin"></param>
+	<param name="Df"></param>
+	<param name="Forma"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.GetRateFromDiscountFactor_v2(System.Double,System.Double,System.String,System.Int32)">
+	<summary>''' 
+ </summary>
+	<param name="Plazo"></param>
+	<param name="Df"></param>
+	<param name="Forma"></param>
+	<param name="compound"></param>
+	<returns></returns>
+	<remarks>Con error</remarks>
+</member><member name="M:Funciones.Financieras.LinInterpol(System.Object,System.Object,System.Double)">
+	<summary>
+	</summary>
+	<param name="plazos"></param>
+	<param name="tasas"></param>
+	<param name="Plazo"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.ExpInterpol(System.Int32[],System.Double[],System.Int32)">
+	<summary>
+	</summary>
+	<param name="plazos"></param>
+	<param name="factores"></param>
+	<param name="Plazo"></param>
+	<returns></returns>
+	<remarks>Sin uso</remarks>
+</member><member name="M:Funciones.Financieras.interest(System.DateTime,System.DateTime,System.Double,System.String,System.Double)">
+	<summary>
+	</summary>
+	<param name="startDate"></param>
+	<param name="endDate"></param>
+	<param name="rate"></param>
+	<param name="typeOfRate"></param>
+	<param name="notional"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.Indicador(System.Object,System.Object)">
+	<summary>
+	</summary>
+	<param name="n"></param>
+	<param name="m"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.valad(System.String)">
+	<summary>
+	</summary>
+	<param name="x"></param>
+	<returns></returns>
+	<remarks>Sin Uso</remarks>
+</member><member name="M:Funciones.Financieras.Ten(System.String)">
+	<summary>
+	</summary>
+	<param name="Tn"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.localTenor(System.DateTime,System.String)">
+	<summary>
+	</summary>
+	<param name="startDate">Fecha Inicio</param>
+	<param name="Tn">Cadena</param>
+	<returns>Fecha</returns>
+	<remarks>Sin Uso</remarks>
+</member><member name="M:Funciones.Financieras.BussDay(System.DateTime)">
+	<summary>
+	</summary>
+	<param name="a"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.lag(System.DateTime,System.Int32)">
+	<summary>
+	</summary>
+	<param name="a"></param>
+	<param name="nStep"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.shift(System.DateTime,System.Int32)">
+	<summary>
+	</summary>
+	<param name="a"></param>
+	<param name="nStep"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.ModBussDay(System.DateTime)">
+	<summary>
+	</summary>
+	<param name="a"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.Prev2(System.DateTime)">
+	<summary>
+	</summary>
+	<param name="a"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.Max(System.Int32,System.Int32)">
+	<summary>
+	</summary>
+	<param name="a"></param>
+	<param name="b"></param>
+	<returns></returns>
+	<remarks>Sin uso</remarks>
+</member><member name="M:Funciones.Financieras.Min(System.Int32,System.Int32)">
+	<summary>
+	</summary>
+	<param name="a"></param>
+	<param name="b"></param>
+	<returns></returns>
+	<remarks>Sin uso</remarks>
+</member><member name="M:Funciones.Financieras.CountDays(System.DateTime,System.DateTime,System.String)">
+	<summary>
+ Count days between dates t1 and t2 accordingly to the day count convention Basis
+ </summary>
+	<param name="t1"></param>
+	<param name="t2"></param>
+	<param name="basis">Basis arguments are:  "Act/360", "Act/365" and "30/360"</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.YearFraction(System.DateTime,System.DateTime,System.String)">
+	<summary>
+ Computes the fraction of year between dates t1 and t2 accordingly to the day count convention Basis
+ </summary>
+	<param name="t1">Fecha t1</param>
+	<param name="t2">Fecha t2</param>
+	<param name="basis">Act/360, Act/365 ó 30/360</param>
+	<returns></returns>
+	<remarks>Valid Basis arguments are: Act/360, Act/365 and 30/360</remarks>
+</member><member name="M:Funciones.Financieras.AddMonths(System.DateTime,System.Int32)">
+	<summary>
+ Equivalent to Excel Function EDATE()
+ add/sustracts Mon number of months to date Dat for positive/negative values of Mon
+ </summary>
+	<param name="Dat">Date</param>
+	<param name="Mon">positive/negative values of Months</param>
+	<returns>Fecha</returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.AddMonthsC(System.DateTime,System.Int32)">
+	<summary>
+ equivalent to Excel Function EDATE()
+ add/sustracts Mon number of months to date Dat for positive/negative values of Mon
+ </summary>
+	<param name="Dat"></param>
+	<param name="Mon"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.YearFracActualActual(System.DateTime,System.DateTime)">
+	<summary>
+	</summary>
+	<param name="inicial"></param>
+	<param name="final"></param>
+	<returns></returns>
+	<remarks>Sin uso</remarks>
+</member><member name="M:Funciones.Financieras.RedondeoParcial(System.Int32)">
+	<summary>
+	</summary>
+	<param name="numero"></param>
+	<returns></returns>
+	<remarks>Sin uso</remarks>
+</member><member name="M:Funciones.Financieras.calendar(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+	</summary>
+	<param name="startDate"></param>
+	<param name="endDate"></param>
+	<param name="periodicity">expressed in months, valid is integers from 1 to 12</param>
+	<param name="adjustment">0 is same, 1 is next buss day, else is next buss day</param>
+	<param name="pmtAdjustment">1 is next buss day, 2 is plus 2 buss days, else is next buss day,0 is same or next buss day if end date is not buss day</param>
+	<param name="typeStubPeriod">1 is at the beginning, 2 is at the end, else is at he end</param>
+	<returns>date(,)</returns>
+	<remarks>Retorna una matriz de dobles con base cero</remarks>
+</member><member name="M:Funciones.Financieras.floatCalendar(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+	</summary>
+	<param name="startDate"></param>
+	<param name="endDate"></param>
+	<param name="periodicity">expressed in months, valid is integers from 1 to 12</param>
+	<param name="adjustment">0 is same, 1 is next buss day, else is next buss day</param>
+	<param name="pmtAdjustment">1 is next buss day, 2 is plus 2 buss days, else is next buss day</param>
+	<param name="typeStubPeriod">1 is at the beginning, 2 is at the end, else is at he end</param>
+	<param name="fixingLag">is how many buss days before start date the index is fixed</param>
+	<param name="fixingRatio">corresponds to how many interest periods correspond to one fixing. 1 is one fixing per period 2 is one fixing per two periods</param>
+	<param name="fixingStubPeriod">1 is at the beginning, 2 at the end, else is at the end</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.forwardCurveFromCurrency(System.String)">
+	<summary>
+	</summary>
+	<param name="ccy"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Funciones.Financieras.GenerarClave(System.String)">
+	<summary>
+ Genera una clave del tipo xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx a partir de un string.
+ </summary>
+	<param name="sClave">Clave a Encriptar</param>
+	<returns>String del tipo xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx-xxxxxx en hexadecimal</returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,7 @@
+; TODO: How to get rid of this again - need to sort out clash with Windows headers when __declspec(dllexport)-ing these.
+
+EXPORTS
+;	DllCanUnloadNow		PRIVATE
+;	DllGetClassObject	PRIVATE
+;	DllRegisterServer	PRIVATE
+;	DllUnregisterServer	PRIVATE

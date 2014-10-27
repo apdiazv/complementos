@@ -1,0 +1,56 @@
+D:\Complementos\Funciones\bin\Debug\CFunciones.dll
+D:\Complementos\Funciones\bin\Debug\CFunciones.tlb
+D:\Complementos\Funciones\bin\Debug\ExcelDna.Integration.dll
+D:\Complementos\Funciones\bin\Debug\Microsoft.Office.Interop.Excel.dll
+D:\Complementos\Funciones\bin\Debug\VolumenSerial.dll
+D:\Complementos\Funciones\bin\Debug\Microsoft.Vbe.Interop.dll
+D:\Complementos\Funciones\bin\Debug\office.dll
+D:\Complementos\Funciones\bin\Debug\VolumenSerial.pdb
+D:\Complementos\Funciones\obj\Debug\ResolveAssemblyReference.cache
+D:\Complementos\Funciones\obj\Debug\CFunciones.Resources.resources
+D:\Complementos\Funciones\obj\Debug\CFunciones.vbproj.GenerateResource.Cache
+D:\Complementos\Funciones\obj\Debug\CFunciones.dll
+D:\Complementos\Funciones\bin\Debug\CFunciones.pdb
+D:\Complementos\Funciones\obj\Debug\CFunciones.pdb
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\bin\Debug\CFunciones.dll
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\bin\Debug\CFunciones.pdb
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\bin\Debug\CFunciones.tlb
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\bin\Debug\ExcelDna.Integration.dll
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\bin\Debug\Microsoft.Office.Interop.Excel.dll
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\bin\Debug\VolumenSerial.dll
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\bin\Debug\Microsoft.Vbe.Interop.dll
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\bin\Debug\office.dll
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\bin\Debug\VolumenSerial.pdb
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\obj\Debug\ResolveAssemblyReference.cache
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.Resources.resources
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.vbproj.GenerateResource.Cache
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.dll
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.pdb
+C:\Complementos\Fuentes\Funciones\bin\Debug\CFunciones.dll
+C:\Complementos\Fuentes\Funciones\bin\Debug\CFunciones.pdb
+C:\Complementos\Fuentes\Funciones\bin\Debug\CFunciones.tlb
+C:\Complementos\Fuentes\Funciones\bin\Debug\ExcelDna.Integration.dll
+C:\Complementos\Fuentes\Funciones\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Complementos\Fuentes\Funciones\bin\Debug\VolumenSerial.dll
+C:\Complementos\Fuentes\Funciones\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Complementos\Fuentes\Funciones\bin\Debug\office.dll
+C:\Complementos\Fuentes\Funciones\bin\Debug\VolumenSerial.pdb
+C:\Complementos\Fuentes\Funciones\obj\Debug\ResolveAssemblyReference.cache
+C:\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.Resources.resources
+C:\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.vbproj.GenerateResource.Cache
+C:\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.dll
+C:\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.pdb
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\bin\Debug\CFunciones.dll
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\bin\Debug\CFunciones.pdb
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\bin\Debug\CFunciones.tlb
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\bin\Debug\ExcelDna.Integration.dll
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\bin\Debug\VolumenSerial.dll
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\bin\Debug\office.dll
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\bin\Debug\VolumenSerial.pdb
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.Resources.resources
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.vbproj.GenerateResource.Cache
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.dll
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\Funciones\obj\Debug\CFunciones.pdb

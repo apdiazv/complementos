@@ -1,0 +1,15 @@
+	<DnaLibrary>
+	<![CDATA[
+			imports ExcelDna.Integration
+	
+			Public Module MyFunctions
+
+				<ExcelFunction(Description:="Version de la Libreria de Funciones", Category:="creasys.funciones.Financieras")> _
+				Function Ver()
+					return nothing
+				End Function	
+
+		End Module
+		
+	]]>
+	</DnaLibrary>

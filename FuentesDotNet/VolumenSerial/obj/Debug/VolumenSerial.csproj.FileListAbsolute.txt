@@ -1,0 +1,53 @@
+I:\Creasys 2.0\VolumenSerial\bin\Debug\VolumenSerial.dll
+I:\Creasys 2.0\VolumenSerial\bin\Debug\VolumenSerial.pdb
+I:\Creasys 2.0\VolumenSerial\obj\Debug\ResolveAssemblyReference.cache
+I:\Creasys 2.0\VolumenSerial\obj\Debug\VolumenSerial.dll
+I:\Creasys 2.0\VolumenSerial\obj\Debug\VolumenSerial.pdb
+I:\Creasys3\VolumenSerial\bin\Debug\VolumenSerial.dll.config
+I:\Creasys3\VolumenSerial\bin\Debug\VolumenSerial.dll
+I:\Creasys3\VolumenSerial\bin\Debug\VolumenSerial.pdb
+I:\Creasys3\VolumenSerial\obj\Debug\ResolveAssemblyReference.cache
+I:\Creasys3\VolumenSerial\obj\Debug\VolumenSerial.dll
+I:\Creasys3\VolumenSerial\obj\Debug\VolumenSerial.pdb
+Y:\Creasys4\VolumenSerial\bin\Debug\VolumenSerial.dll.config
+Y:\Creasys4\VolumenSerial\bin\Debug\VolumenSerial.dll
+Y:\Creasys4\VolumenSerial\bin\Debug\VolumenSerial.pdb
+Y:\Creasys4\VolumenSerial\obj\Debug\ResolveAssemblyReference.cache
+Y:\Creasys4\VolumenSerial\obj\Debug\VolumenSerial.dll
+Y:\Creasys4\VolumenSerial\obj\Debug\VolumenSerial.pdb
+I:\Creasys4\VolumenSerial\bin\Debug\VolumenSerial.dll.config
+I:\Creasys4\VolumenSerial\bin\Debug\VolumenSerial.dll
+I:\Creasys4\VolumenSerial\bin\Debug\VolumenSerial.pdb
+I:\Creasys4\VolumenSerial\obj\Debug\ResolveAssemblyReference.cache
+I:\Creasys4\VolumenSerial\obj\Debug\VolumenSerial.dll
+I:\Creasys4\VolumenSerial\obj\Debug\VolumenSerial.pdb
+C:\Shared\Work\Creasys4\VolumenSerial\bin\Debug\VolumenSerial.dll.config
+C:\Shared\Work\Creasys4\VolumenSerial\bin\Debug\VolumenSerial.dll
+C:\Shared\Work\Creasys4\VolumenSerial\bin\Debug\VolumenSerial.pdb
+C:\Shared\Work\Creasys4\VolumenSerial\obj\Debug\ResolveAssemblyReference.cache
+C:\Shared\Work\Creasys4\VolumenSerial\obj\Debug\VolumenSerial.dll
+C:\Shared\Work\Creasys4\VolumenSerial\obj\Debug\VolumenSerial.pdb
+D:\Complementos\VolumenSerial\bin\Debug\VolumenSerial.dll.config
+D:\Complementos\VolumenSerial\bin\Debug\VolumenSerial.dll
+D:\Complementos\VolumenSerial\bin\Debug\VolumenSerial.pdb
+D:\Complementos\VolumenSerial\obj\Debug\ResolveAssemblyReference.cache
+D:\Complementos\VolumenSerial\obj\Debug\VolumenSerial.dll
+D:\Complementos\VolumenSerial\obj\Debug\VolumenSerial.pdb
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\VolumenSerial\bin\Debug\VolumenSerial.dll.config
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\VolumenSerial\bin\Debug\VolumenSerial.dll
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\VolumenSerial\bin\Debug\VolumenSerial.pdb
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\VolumenSerial\obj\Debug\ResolveAssemblyReference.cache
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\VolumenSerial\obj\Debug\VolumenSerial.dll
+Z:\Creasys9\__Eugenio Roco\Complementos\Fuentes\VolumenSerial\obj\Debug\VolumenSerial.pdb
+C:\Complementos\Fuentes\VolumenSerial\bin\Debug\VolumenSerial.dll.config
+C:\Complementos\Fuentes\VolumenSerial\bin\Debug\VolumenSerial.dll
+C:\Complementos\Fuentes\VolumenSerial\bin\Debug\VolumenSerial.pdb
+C:\Complementos\Fuentes\VolumenSerial\obj\Debug\ResolveAssemblyReference.cache
+C:\Complementos\Fuentes\VolumenSerial\obj\Debug\VolumenSerial.dll
+C:\Complementos\Fuentes\VolumenSerial\obj\Debug\VolumenSerial.pdb
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\VolumenSerial\bin\Debug\VolumenSerial.dll.config
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\VolumenSerial\bin\Debug\VolumenSerial.dll
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\VolumenSerial\bin\Debug\VolumenSerial.pdb
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\VolumenSerial\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\VolumenSerial\obj\Debug\VolumenSerial.dll
+C:\Users\sbecerra\Desktop\Complementos\Fuentes\VolumenSerial\obj\Debug\VolumenSerial.pdb

@@ -1,0 +1,11 @@
+I:\Creasys3\Funciones\bin\Debug\Funciones.dll
+I:\Creasys3\Funciones\bin\Debug\Funciones.pdb
+I:\Creasys3\Funciones\bin\Debug\Funciones.xml
+I:\Creasys3\Funciones\bin\Debug\VolumenSerial.dll
+I:\Creasys3\Funciones\bin\Debug\VolumenSerial.pdb
+I:\Creasys3\Funciones\obj\Debug\ResolveAssemblyReference.cache
+I:\Creasys3\Funciones\obj\Debug\Funciones.Resources.resources
+I:\Creasys3\Funciones\obj\Debug\Funciones.vbproj.GenerateResource.Cache
+I:\Creasys3\Funciones\obj\Debug\Funciones.dll
+I:\Creasys3\Funciones\obj\Debug\Funciones.xml
+I:\Creasys3\Funciones\obj\Debug\Funciones.pdb
